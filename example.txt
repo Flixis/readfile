@@ -1,0 +1,9 @@
+Application:
+- Name: Q's Test Framework
+- Version: v0.8.7-TSZQO
+- Machine: CLNT1351
+- Mode: Production
+Test:
+- PN: 9999-1111-2222
+- Operation: Endurance test
+- Operation configuration: ET (id: 464485; Release R220 (Latest))
