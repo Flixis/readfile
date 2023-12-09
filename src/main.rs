@@ -1,9 +1,19 @@
+use std::env;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
 use std::collections::{HashMap, VecDeque};
 
 fn main() -> io::Result<()> {
-    let file = File::open("big_text.log")?;
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() != 2 {
+        eprintln!("Usage: {} <filename>", args[0]);
+        std::process::exit(1);
+    }
+
+    let filename = &args[1];
+
+    let file = File::open(filename)?;
     let reader = BufReader::new(file);
 
     let x = 5; // Change x to the desired number of lines to read from the beginning and end.
